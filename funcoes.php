@@ -76,7 +76,7 @@ echo "<br /><br />";
 
 function exibirNomes(array $nomes){
 
-array_reverse($nomes)
+array_reverse($nomes);
 
     foreach($nomes as $nome){
 

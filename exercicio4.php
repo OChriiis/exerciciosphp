@@ -1,33 +1,29 @@
 <?php
 
-function deletaValor(array $vetorValores, $valorQualquer){
+  function deletarElemento($vetor, $elementoASerDeletado){
 
-    
 
-    $valorQualquer = 66;
-     
-  
-    foreach($vetorValores as $valor){
+    foreach($vetor as $chave => $elemento){
+
+
+      if($elemento == $elementoASerDeletado){
+
       
-        if(in_array($valorQualquer, $vetorValores)){
+        unset($vetor[$chave]);
+
         
-            unset($vetorValores[$valorQualquer]);
-            
-            return $vetorValores;
-      
-          } 
-          
-          else {
-              echo "False";
-          }
-       
-    } 
-   
-}
+        return $vetor;
 
+      }
 
-print_r(deletaValor([2, 5, 9],[5])) 
+    }
+    
+    return false;
 
-  
+  }
 
-?>
+  $vetor = [1,56,9, "ônibus", "trêm", "metrô", "articulado"];
+
+  $novoVetor = deletarElemento($vetor, "articulado");
+
+  print_r($novoVetor);
